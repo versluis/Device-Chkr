@@ -99,6 +99,7 @@
 
 
 - (NSString *) platformString {
+    
     // Gets a string with the device model
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
@@ -121,7 +122,7 @@
     if ([platform isEqualToString:@"iPhone5,3"])    return @"iPhone 5c (GSM+CDMA)";
     if ([platform isEqualToString:@"iPhone5,4"])    return @"iPhone 5c (GSM, Europe/Asia)";
     if ([platform isEqualToString:@"iPhone6,1"])    return @"iPhone 5s (US/Japan)";
-    if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5c (Europe/Asia)";
+    if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5s (Europe/Asia)";
     
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch (1 Gen)";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch (2 Gen)";
