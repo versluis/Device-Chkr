@@ -1,5 +1,5 @@
-Device-Chkr
-===========
+iOS Device Checker
+==================
 
 iOS Project which determines the current Device Model by runtime identifier (i.e. iPhone 6,1) and translates it to a meaningful name.
 
