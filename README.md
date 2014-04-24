@@ -1,7 +1,7 @@
-iOS Device Checker
-==================
+iOS Hardware Checker
+====================
 
-iOS Project which determines the current Device Model by runtime identifier (i.e. iPhone 6,1) and translates it to a meaningful name.
+iOS Project which determines the current Device Model by runtime identifier (i.e. iPhone 6,1) and translates it into a meaningful name.
 
 Kudos to the following links:
 
