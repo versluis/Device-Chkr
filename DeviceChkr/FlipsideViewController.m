@@ -16,7 +16,10 @@
 
 - (void)awakeFromNib
 {
-    self.preferredContentSize = CGSizeMake(320.0, 480.0);
+    if ([self respondsToSelector:@selector(preferredContentSize)]) {
+        self.preferredContentSize = CGSizeMake(320.0, 480.0);
+    }
+    
     [super awakeFromNib];
 }
 

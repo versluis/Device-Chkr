@@ -42,6 +42,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return YES;
+}
+
 #pragma mark - Flipside View Controller
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
@@ -92,7 +96,7 @@
     
     // determine current device (compile time)
     NSString *currentDevice = [UIDevice currentDevice].model;
-    self.deviceDescription.text = [NSString stringWithFormat:@"Compile Time ID:\n%@", currentDevice];
+    self.deviceDescription.text = [NSString stringWithFormat:@"Compile Time ID:\n%@\n\nPlatform ID:\n%@", currentDevice, [self platformIdentifier]];
     
     // ask for current device (runtime, see below)
     self.deviceTitle.text = [self platformString];
@@ -100,7 +104,7 @@
 }
 
 
-- (NSString *) platformString {
+- (NSString *)platformIdentifier {
     
     // Gets a string with the device model
     size_t size;
@@ -109,6 +113,14 @@
     sysctlbyname("hw.machine", machine, &size, NULL, 0);
     NSString *platform = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
     free(machine);
+    
+    return platform;
+}
+
+- (NSString *) platformString {
+    
+    NSString *platform;
+    platform = [self platformIdentifier];
     
     // iPhones
     
@@ -143,8 +155,8 @@
     
     // iPads
     
-    if ([platform isEqualToString:@"iPad1,1"])      return @"iPad";
-    if ([platform isEqualToString:@"iPad1,2"])      return @"iPad 3G";
+    if ([platform isEqualToString:@"iPad1,1"])      return @"iPad 1";
+    if ([platform isEqualToString:@"iPad1,2"])      return @"iPad 1 (3G)";
     if ([platform isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
     if ([platform isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
     if ([platform isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
