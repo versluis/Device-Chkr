@@ -11,6 +11,7 @@
 
 //  results verified here:
 //  http://www.everymac.com/ultimate-mac-lookup/
+//  http://theiphonewiki.com/wiki/Models
 //
 //  Created by Jay Versluis on 24/04/2014.
 //  Copyright (c) 2014 Pinkstone Pictures LLC. All rights reserved.
@@ -60,6 +61,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
+    
+        // gives a warning in Xcode 6 - makesSense = nil
         [[segue destinationViewController] setDelegate:self];
         
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -90,7 +93,7 @@
     
     // determine current device (compile time)
     NSString *currentDevice = [UIDevice currentDevice].model;
-    self.deviceDescription.text = [NSString stringWithFormat:@"Compiletime ID: %@", currentDevice];
+    self.deviceDescription.text = [NSString stringWithFormat:@"Compile Time ID:\n%@", currentDevice];
     
     // ask for current device (runtime, see below)
     self.deviceTitle.text = [self platformString];
@@ -108,6 +111,8 @@
     NSString *platform = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
     free(machine);
     
+    // iPhones
+    
     if ([platform isEqualToString:@"iPhone1,1"])    return @"Original iPhone";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
     if ([platform isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
@@ -124,11 +129,20 @@
     if ([platform isEqualToString:@"iPhone6,1"])    return @"iPhone 5s (US/Japan)";
     if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5s (Europe/Asia)";
     
+    if ([platform isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
+    if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
+    
+    
+    // iPod Touchs
+    
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch (1 Gen)";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch (2 Gen)";
     if ([platform isEqualToString:@"iPod3,1"])      return @"iPod Touch (3 Gen)";
     if ([platform isEqualToString:@"iPod4,1"])      return @"iPod Touch (4 Gen)";
     if ([platform isEqualToString:@"iPod5,1"])      return @"iPod Touch (5 Gen)";
+    
+    
+    // iPads
     
     if ([platform isEqualToString:@"iPad1,1"])      return @"iPad";
     if ([platform isEqualToString:@"iPad1,2"])      return @"iPad 3G";
