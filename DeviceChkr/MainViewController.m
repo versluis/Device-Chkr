@@ -62,8 +62,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
     
-        // gives a warning in Xcode 6 - makesSense = nil
-        [[segue destinationViewController] setDelegate:self];
+        [(FlipsideViewController *)segue.destinationViewController setDelegate:self];
         
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
