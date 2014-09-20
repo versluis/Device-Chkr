@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D224B36D19CE1F0D006F10FD /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D224B36C19CE1F0D006F10FD /* index.html */; };
 		D2AA632F190941EB00D76C5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AA632E190941EB00D76C5A /* Foundation.framework */; };
 		D2AA6331190941EB00D76C5A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AA6330190941EB00D76C5A /* CoreGraphics.framework */; };
 		D2AA6333190941EB00D76C5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AA6332190941EB00D76C5A /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		D224B36A19CE17A0006F10FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		D224B36B19CE17A9006F10FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		D224B36C19CE1F0D006F10FD /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		D2AA632B190941EB00D76C5A /* DeviceChkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceChkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AA632E190941EB00D76C5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AA6330190941EB00D76C5A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +127,7 @@
 				D2AA6347190941EB00D76C5A /* MainViewController.m */,
 				D2AA6349190941EB00D76C5A /* FlipsideViewController.h */,
 				D2AA634A190941EB00D76C5A /* FlipsideViewController.m */,
+				D224B36C19CE1F0D006F10FD /* index.html */,
 				D2AA634C190941EB00D76C5A /* Images.xcassets */,
 				D2AA6335190941EB00D76C5A /* Supporting Files */,
 			);
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D224B36D19CE1F0D006F10FD /* index.html in Resources */,
 				D2AA6345190941EB00D76C5A /* Main_iPad.storyboard in Resources */,
 				D2AA634D190941EB00D76C5A /* Images.xcassets in Resources */,
 				D2AA6342190941EB00D76C5A /* Main_iPhone.storyboard in Resources */,

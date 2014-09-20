@@ -10,6 +10,8 @@
 
 @interface FlipsideViewController ()
 
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+
 @end
 
 @implementation FlipsideViewController
@@ -26,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self populateWebView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,6 +42,13 @@
 - (IBAction)done:(id)sender
 {
     [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+- (void)populateWebView {
+    
+    NSURL *htmlurl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"index" ofType:@"html"]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:htmlurl]];
+    
 }
 
 @end
